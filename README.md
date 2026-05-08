@@ -7,12 +7,16 @@ Clean UI, fast performance, and fully frontend-based.
 
 ## ✨ Features
 
-* Shorten long URLs instantly
-* Clean and responsive UI
-* Copy shortened links easily
-* Powered by the is.gd API
-* No backend required
-* Built with vanilla JavaScript + Tailwind CSS
+- Shorten long URLs instantly
+- Clean and responsive UI
+- Copy shortened links easily
+- Persistent local counter for:
+  - Links created
+  - Links copied
+- User stats are stored locally and remain private
+- Powered by the is.gd API
+- No backend required
+- Built with vanilla JavaScript + Tailwind CSS
 
 ---
 
