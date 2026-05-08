@@ -30,7 +30,7 @@ Clean UI, fast performance, and fully frontend-based.
 Add your live demo link here:
 
 ```txt
-https://your-demo-link.com
+https://inshronin.github.io/URLMonk
 ```
 
 ---
@@ -68,7 +68,7 @@ https://is.gd/
 Add screenshots or GIFs here.
 
 ```txt
-/image.png
+![Screenshot](/image.png)
 ```
 
 ---
