@@ -31,7 +31,6 @@ Clean UI, fast performance, and fully frontend-based.
 
 ## 🚀 Demo
 
-Add your live demo link here:
 
 
 [Live](https://inshronin.github.io/URLMonk)
@@ -69,7 +68,7 @@ https://is.gd/
 
 ## 📸 Preview
 
-Add screenshots or GIFs here.
+
 
 
 ![Screenshot](/image.png)
