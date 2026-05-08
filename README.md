@@ -40,13 +40,13 @@ https://your-demo-link.com
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/InshRonin/URLMonk.git
 ```
 
 Open the project folder:
 
 ```bash
-cd your-repo-name
+cd URLMonk
 ```
 
 Run locally by opening `index.html` in your browser.
@@ -68,7 +68,7 @@ https://is.gd/
 Add screenshots or GIFs here.
 
 ```txt
-/screenshot.png
+/image.png
 ```
 
 ---
@@ -85,10 +85,24 @@ Add screenshots or GIFs here.
 ## 📁 Project Structure
 
 ```txt
+├── node_modules
+├── public
+│   └── link.png
+├── src
+│   ├── assets
+│   ├── css
+│   │   ├── custom.css
+│   │   ├── input.css
+│   │   └── output.css
+│   └── js
+│       └── main.js
 ├── index.html
-├── script.js
-├── style.css
-└── README.md
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+└── tailwind.config.js
 ```
 
 ---
