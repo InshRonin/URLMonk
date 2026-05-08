@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>URLMonk | Lightning Fast URL Shortener</title>
+    <meta name="title" content="URLMonk | Lightning Fast URL Shortener">
+    <meta name="description"
+        content="URLMonk is a free tool to shorten URLs and create shareable links. Powered by is.gd for maximum reliability and speed.">
+    <meta name="keywords" content="url shortener, link shortener, is.gd api, free url shortener, URLMonk, shorten link">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="URLMonk | Shorten your links">
+    <meta property="og:description" content="The modern, lightning-fast link management platform.">
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./public/link.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/output.css">
+    <link rel="stylesheet" href="./src/css/custom.css">
+</head>
+
+<body
+    class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-500 overflow-x-hidden">
+
+    <!-- Animated Background -->
+    <div class="fixed top-0 -z-10 w-full h-full overflow-hidden">
+        <div
+            class="absolute top-[-10%] left-[-10%] w-72 h-72 bg-blue-400 dark:bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob">
+        </div>
+        <div
+            class="absolute top-[-10%] right-[-10%] w-72 h-72 bg-purple-400 dark:bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="absolute bottom-[-10%] left-[20%] w-96 h-96 bg-pink-400 dark:bg-pink-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000">
+        </div>
+    </div>
+
+    <nav class="container mx-auto px-6 py-6 flex justify-between items-center relative z-10">
+        <div class="text-2xl font-extrabold tracking-tighter text-blue-600 dark:text-blue-400">
+            URL<span class="text-slate-900 dark:text-white">Monk</span>
+        </div>
+        <button id="theme-toggle" class="p-2 rounded-full glass hover:scale-110 transition-transform">
+            <img id="theme-toggle-dark-icon" class="hidden w-5 h-5" src="./src/assets/moon.svg" alt="Dark Icon" />
+            <img id="theme-toggle-light-icon" class="hidden w-5 h-5" src="./src/assets/sun.svg" alt="Light Icon" />
+        </button>
+    </nav>
+
+    <main class="container mx-auto px-6 pt-20 pb-32 flex flex-col items-center text-center relative z-10">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+            Shorten your links, <br>
+            <span class="bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">Expand your
+                reach.</span>
+        </h1>
+
+        <p class="text-slate-500 dark:text-slate-400 max-w-2xl text-lg mb-12">URLMonk is a reliable link management
+            platform powered by the <b>is.gd</b> engine.</p>
+
+        <div
+            class="w-full max-w-3xl glass p-2 md:p-4 rounded-3xl md:rounded-[2.5rem] shadow-2xl flex flex-col md:flex-row gap-2">
+            <input id="url-input" type="text" placeholder="Paste your long URL here..."
+                class="flex-1 bg-transparent border-none focus:ring-0 px-6 py-4 text-lg outline-none placeholder:text-slate-400">
+            <button id="shorten-btn"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl md:rounded-[1.8rem] font-bold text-lg shadow-lg shadow-blue-600/20 transition-all">
+                Shorten Link
+            </button>
+        </div>
+
+        <div id="result-box" class="hidden mt-8 w-full max-w-xl p-6 glass rounded-[2rem] border-2 border-blue-500/50">
+            <p class="text-xs uppercase tracking-widest font-bold text-blue-500 mb-2">Short Link Ready:</p>
+            <div class="flex items-center justify-between">
+                <a id="shortened-url" href="#" target="_blank" title="Shortened URL"
+                    class="text-xl font-bold text-slate-900 dark:text-white underline decoration-blue-500"></a>
+                <button onclick="copyToClipboard()" id="copy-btn"
+                    class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-4 py-2 rounded-xl text-sm font-bold hover:scale-105 transition-transform">Copy</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 w-full max-w-4xl">
+            <div class="flex flex-col items-center">
+                <span id="stat-links" class="text-3xl font-bold">0</span>
+                <span class="text-sm text-slate-500 uppercase tracking-widest">Links Created</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span id="stat-clicks" class="text-3xl font-bold">0</span>
+                <span class="text-sm text-slate-500 uppercase tracking-widest">Links Copied</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl font-bold">100%</span>
+                <span class="text-sm text-slate-500 uppercase tracking-widest">Uptime</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl font-bold">Free</span>
+                <span class="text-sm text-slate-500 uppercase tracking-widest">Tier Forever</span>
+            </div>
+        </div>
+    </main>
+
+    <footer
+        class="mt-20 border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="font-extrabold text-xl text-blue-600">URLMonk</div>
+            <div class="flex gap-8 text-slate-500 dark:text-slate-400 text-sm font-medium">
+                <!-- Official is.gd API link -->
+                <a rel="noopener" href="https://is.gd/developers.php" target="_blank"
+                    class="hover:text-blue-500 transition-colors">is.gd API Docs</a>
+                <a rel="noopener" href="https://linkedin.com" target="_blank"
+                    class="hover:text-blue-500 transition-colors">LinkedIn</a>
+            </div>
+            <div class="text-slate-400 text-sm">© 2026 URLMonk</div>
+        </div>
+    </footer>
+
+    <script src="./src/js/main.js" defer></script>
+</body>
+
+</html>
